@@ -1,0 +1,18 @@
+ object even {
+    def unapply(arg: Int): Boolean = {
+      if (arg % 2 == 0) true
+      else None
+    }
+  }
+  object singleDigit {
+    def unapply(arg: Int): Boolean = {
+      if (arg < 10) true
+      else None
+    }
+  }
+  mathProperty = n match {
+    case singleDigit() => "Single Digit"
+    case even()        => "an even number"
+    case _             => "no property"
+  }
+  println(mathProperty)
